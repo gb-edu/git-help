@@ -13,7 +13,6 @@
 	src: url("assets/fonts/Roboto-Regular.ttf");
 }
 
-
 @font-face {
 	font-family: "roboto-l";
 	src: url("assets/fonts/Roboto-Light.ttf");
@@ -42,6 +41,11 @@ body {
 	font-family: 'opensans', sans-serif;
 	font-size: 16px;
 	color: #292929;
+
+  //-------test-------
+  // background-color: #0366d6;
+  //-------test-------
+  
 }
 
 .link {
@@ -113,6 +117,7 @@ h3 {
   background-color: #fffce0;
   border: 1px solid rgb(207, 207, 207);
   border-radius: 5px;
+  margin-top: 20px;
   padding: 15px;
 }
 
