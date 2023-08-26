@@ -3,27 +3,6 @@
   src: url("assets/fonts/OpenSans-Regular.ttf");
 }
  
-/* @font-face {
-	font-family: "opensans-light";
-  src: url("assets/fonts/opensans-light.ttf");
-}
-*/
-/* @font-face {
-	font-family: "roboto";
-	src: url("assets/fonts/Roboto-Regular.ttf");
-}
-
-@font-face {
-	font-family: "roboto-l";
-	src: url("assets/fonts/Roboto-Light.ttf");
-}
-
-@font-face {
-	font-family: "roboto-m";
-	src: url("assets/fonts/Roboto-Medium.ttf");
-}
- */
-
 @font-face {
 	font-family: "roboto-thin";
 	src: url("assets/fonts/Roboto-Thin.ttf");
@@ -40,12 +19,7 @@
 body {
 	font-family: 'opensans', sans-serif;
 	font-size: 16px;
-	color: #292929;
-
-  //-------test-------
-  // background-color: #0366d6;
-  //-------test-------
-  
+	color: #292929;  
 }
 
 .link {
@@ -75,7 +49,7 @@ body {
 
 .column {
   flex: 50%;
-  padding: 0 16px;
+  padding: 0 12px;
 }
 
 h2, h3 {
@@ -94,6 +68,10 @@ h3 {
   font-size: 22px;
 }
 
+.header__inner {
+  padding: 0 12px;
+}
+
 .logo {
   margin-left: 10px;
   font-size: 2.5rem;
@@ -106,6 +84,10 @@ h3 {
   font-size: 1.5rem;
   font-weight: normal;
   opacity: .5;
+}
+
+.logo_img {
+  max-width: 40px;
 }
 
 .text {

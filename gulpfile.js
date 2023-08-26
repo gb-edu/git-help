@@ -16,18 +16,17 @@ function browser_sync() {
 
 function scripts() {
   return src([
-    'node_modules/jquery/dist/jquery.min.js',
-    'scr/js/app.js',
+    'src/js/app.js'
   ])
-  .pipe(concat('app.min.js'))   // gulp-concat (in package.json)
+  // .pipe(concat('app.min.js'))   // gulp-concat (in package.json)
   .pipe(dest('dist/js/'))
   .pipe(browserSync.stream())
 }
 
 function makecss() {
   return src([
-    'scr/scss/style.scss',
-    'scr/scss/media.scss',
+    'src/scss/style.scss',
+    'src/scss/media.scss',
   ])
   .pipe(concat('style.css'))
   .pipe(sass())
@@ -39,8 +38,8 @@ function makecss() {
 }
 
 function startwatch() {
-  watch('scr/scss/*.scss', makecss);
-  watch('scr/js/*.js', scripts);
+  watch('src/scss/*.scss', makecss);
+  watch('src/js/*.js', scripts);
   watch('dist/index.html').on('change', browserSync.reload);
 }
 
@@ -49,4 +48,6 @@ exports.scripts = scripts;
 exports.makecss = makecss;
 
 exports.default = parallel(scripts, makecss, browser_sync, startwatch);
+// exports.default = parallel(makecss, browser_sync, startwatch);
 // exports.default = parallel(startwatch);
+// after cloning repository run 'npm install'

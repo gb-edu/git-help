@@ -12,7 +12,7 @@
   <header class="header">
     <div class="container">
       <div class="header__inner">
-        <img src="assets/img/logo.png" alt="logo">
+        <img class="logo_img" src="assets/img/logo.svg" alt="logo">
         <div class="logo">git <span>--fast-help</span></div>
       </div>
     </div>
@@ -22,50 +22,16 @@
       <div class="column">
         <h2>Установка Git</h2>
         <h3>Текущая версия Git</h3>
-
-        <div class="FOR EDITING">
-          <h4>Вопрос</h4>
-          <p>
-            В чем отличие между git push -u origin master
-            и git push origin master? Зачем ключ -u для команды git push?
-          </p>
-          <h4>Ответ</h4>
-          <p>
-            В том случае, если ветка master (или branch_name) не является отслеживаемой
-            веткой origin/master (или origin/branch_name), а вы хотите сделать её таковой.
-            Выполнив команду git push -u origin master вы устанавливаете связь между той веткой,
-            в которой вы находитесь и веткой master на удалённом сервере. Команду требуется выполнить единожды,
-            чтобы потом можно было отправлять/принимать изменения лишь выполняя git push из ветки без указания
-            всяких алиасов для сервера и удалённых веток. Это сделано для удобства.
-          </p>
-
-          <h2>Использование гит</h2>
-          <p>Перед началом работы с клонированным репозиторием нужно выполнить команду git pull, чтобы подтянуть в локальный
-            репозиторий изменения, которые могли быть сделаны на удаленном репозитории</p>
-
-          <p>git pull включает в себя две команды (fetch и еще какую-то)</p>
-          <p>Для того, чтобы посмотреть были ли изменения в удаленном репозитории (т.е нужно ли обновляться (pull)),
-            используют команду ??вроде log нужно уточнить</p>
-
-        </div>
-
-
-        <pre class="code">$ git --version</pre>
+        <div class="code">$ git --version</div>
         <h3>Установка на Linux</h3>
         <p class="text">Установить Git как бинарный пакет можно
         используя менеджер пакетов дистрибутива.
         Fedora (RHEL или CentOS), используйте dnf:</p>
-        <pre class="code">$ sudo dnf install git-all</pre>
+        <div class="code">$ sudo dnf install git-all</div>
         <p class="text">Дистрибутив, основанный на Debian, Ubuntu:</p>
-        <pre class="code">$ sudo apt install git</pre>
+        <div class="code">$ sudo apt install git</div>
         <p class="text">Инструкция по установке:
         <a class="link" href="https://git-scm.com/download/linux">git-scm.com/download/linux</a></p>
-        
-        <h3>Обновление Git на Ubuntu</h3>
-        <pre class="code">
-$ sudo add-apt-repository -y ppa:git-core/ppa
-$ sudo apt-get update
-$ sudo apt-get install git -y</pre>
         
         <h3>Установка в Windows</h3>
         <p class="text">
@@ -76,32 +42,34 @@ $ sudo apt-get install git -y</pre>
         </p>
         <h2>Начальная настройка Git</h2>
         <h3>Список настроек</h3>
-        <pre class="code">$ git config --list</pre>
+        <div class="code">$ git config --list</div>
         <p class="text">Проверка значения конкретного ключа:</p>
-        <pre class="code">git config [key]</pre>
-        <pre class="code">
-$ git config user.name
-John Doe</pre>
+        <div class="code">$ git config [key]</div>
+        <div class="code">
+          $ git config user.name John Doe
+        </div>
         <h3>Имя пользователя</h3>
-        <pre class="code">
-$ git config --global user.name "John Doe"
-$ git config --global user.email johndoe@example.com</pre>
+        <div class="code">
+          $ git config --global user.name "John Doe"<br>
+          $ git config --global user.email johndoe@example.com
+        </div>
       
         <h3>Выбор редактора</h3>
-        <pre class="code">$ git config --global core.editor emacs</pre>
+        <div class="code">$ git config --global core.editor emacs</div>
         <p class="text">Команды <span class="intext">git config core.editor</span>
         <a class="link" href="https://git-scm.com/book/ru/v2/ch00/r_core_editor">git-scm.com/book/ru/v2/ch00/r_core_editor</a></p>
         
         <h3>Настройка ветки по умолчанию</h3>
         <p class="text">При инициализации репозитория командой <span class="intext">git init</span>, создаётся ветка с именем master по умолчанию.</p>
         <p class="text">Начиная с версии 2.28, можно задать другое имя для ветки по умолчанию:</p>
-        <pre class="code">$ git config --global init.defaultBranch main</pre>
+        <div class="code">$ git config --global init.defaultBranch main</div>
       
         <h3>Как получить помощь?</h3>
-        <pre class="code">
-$ git help [команда]
-$ git [команда] --help
-$ man git-[команда]</pre>
+        <div class="code">
+          $ git help [команда]<br>
+          $ git [команда] --help<br>
+          $ man git-[команда]
+        </div>
       
         <h2>Создание Git-репозитория</h2>
         <p class="text">Получить репозиторий Git можно двумя способами:
@@ -109,91 +77,106 @@ $ man git-[команда]</pre>
         либо клонировать существующий репозиторий из любого места.</p>
         <h3>Создание репозитория в существующем каталоге</h3>
         <p class="text">Перейти в каталог:</p>
-        <pre class="code">$ cd /home/user/my_project</pre>
+        <div class="code">$ cd /home/user/my_project</div>
         <p class="text">а затем выполните команду:</p>
-        <pre class="code">$ git init</pre>
+        <div class="code">$ git init</div>
         
         <h3>Клонирование существующего репозитория</h3>
-        <pre class="code">$ git clone</pre>
+        <div class="code">$ git clone</div>
         <p class="text">Например, клонировать библиотеку libgit2:</p>
-        <pre class="code">$ git clone https://github.com/libgit2/libgit2</pre>
+        <div class="code">$ git clone https://github.com/libgit2/libgit2</div>
         <p class="text">Эта команда создаёт каталог libgit2, инициализирует в нём подкаталог .git</p>
         <p class="text">Для клонирования в каталог с другим именем, указать имя, как параметр командной строки:</p>
-        <pre class="code">$ git clone https://github.com/libgit2/libgit2 mylibgit</pre>
+        <div class="code">$ git clone https://github.com/libgit2/libgit2 mylibgit</div>
       
         <h2>Определение состояния</h2>
         <p class="text">Основной инструмент для определения состояния — команда <span class="intext">git status</span>.</p>
-        <pre class="code">
-$ git status
-On branch master
-Your branch is up-to-date with 'origin/master'.
-nothing to commit, working tree clean</pre>
+        <div class="code">
+          $ git status<br>
+          On branch master<br>
+          Your branch is up-to-date with 'origin/master'.
+          nothing to commit, working tree clean
+        </div>
 
         <h2>Отслеживание новых файлов</h2>
         <p class="text">Для того чтобы начать отслеживать новый файл, используется команда <span class="intext">git add</span>.</p>
-        <pre class="code">$ git add newfile</pre>
+        <div class="code">$ git add newfile</div>
 
-        <p class="text">Для отслеживания всех новых файлов, команда <span class="intext">git add -A</span> или <span class="intext">git add .</span></p>
-        <pre class="code">$ git add -A</pre>
-        <pre class="code">$ git add .</pre>
+        <p class="text">Для отслеживания всех новых файлов:</p>
+        <div class="code">$ git add -A</div>
+        <div class="code">$ git add .</div>
       </div>
       
       <div class="column">
         <h3>Просмотр индексированных и неиндексированных изменений</h3>
         <p class="text">Просмотр изменений в файлах:</p>
-        <pre class="code">$ git diff</pre>
+        <div class="code">$ git diff</div>
         <p class="text">Посмотреть, что проиндексировано и что войдёт в следующий коммит: <span class="intext">git diff --staged</span>
           (<span class="intext">--staged</span> и <span class="intext">--cached</span> синонимы).</p> 
 
         <h3>Коммит изменений</h3>
-        <pre class="code">$ git commit</pre>
+        <div class="code">$ git commit</div>
         <p class="text">Команда откроет выбранный текстовый редактор для создания комментария.</p>
         <p class="text">Набрать комментарий к коммиту в командной строке:</p> 
-        <pre class="code">$ git commit -m "Commentary for commit"</pre>
+        <div class="code">$ git commit -m "Commentary for commit"</div>
 
         <h3>Удаление файлов</h3>
         <p class="text">Удалить файл из Git и рабочего каталога:</p>
-        <pre class="code">
-$ git rm -f [file]
-$ git commit -m "remove file"</pre>
+        <div class="code">
+          $ git rm -f [file]<br>
+          $ git commit -m "remove file"
+        </div>
 
         <h3>Просмотр истории коммитов</h3>
-        <pre class="code">$ git log</pre>
+        <div class="code">$ git log</div>
+        
+        <!-- ADD MORE INFO!!! -->
 
         <h2>Операции отмены</h2>
         <p class="text">Чтобы переделать коммит, внесите необходимые изменения,
         добавьте их в индекс и сделайте коммит ещё раз с параметром <span class="intext">--amend</span>:</p>
-        <pre class="code">$ git commit --amend</pre>
+        
+        <!-- NEED MORE EXACT DEFINITION IT'S NOT OBVIOUS WHAT IS --amend -->
+        
+        <div class="code">$ git commit --amend</div>
         <p class="text">Например, если вы сделали коммит и поняли, что забыли проиндексировать изменения в файле, то можно сделать следующее:</p>
-        <pre class="code">
-$ git commit -m 'Initial commit'
-$ git add forgotten_file
-$ git commit --amend</pre>
+        <div class="code">
+          $ git commit -m 'Initial commit'<br>
+          $ git add forgotten_file<br>
+          $ git commit --amend
+        </div>
         <p class="text">В итоге получится единый коммит — второй коммит заменит результаты первого.</p>
 
         <h2>Работа с удалёнными репозиториями</h2>
+        <p class="text">
+          Перед началом работы с клонированным репозиторием нужно выполнить команду <span class="intext">git pull</span>,
+          чтобы подтянуть в локальный репозиторий изменения, которые могли быть сделаны на удаленном репозитории.
+          Она включает в себя две команды git fetch и git merge (забирает изменения и пытается слить).
+        </p>
         <h3>Просмотр удалённых репозиториев</h3>
         <p class="text">Для просмотра списока удалённых репозиториев:
-        <pre class="code">$ git remote</pre>
+        <div class="code">$ git remote</div>
         <p class="text">Ключ <span class="intext">-v</span> просмотр адреса для чтения и записи, привязанные к репозиторию:</p>
-        <pre class="code">
-$ git remote -v
-origin	https://github.com/schacon/ticgit (fetch)
-origin	https://github.com/schacon/ticgit (push)</pre>
+        <div class="code">
+          $ git remote -v<br>
+          origin	https://github.com/schacon/ticgit (fetch)<br>
+          origin	https://github.com/schacon/ticgit (push)
+        </div>
 
         <h3>Добавление удалённых репозиториев</h3>
         <p class="text">Чтобы добавить удалённый репозиторий и присвоить ему имя, выполните команду: <span class="intext">git remote add [shortname] [url]</span>:</p>
-        <pre class="code">
-$ git remote add pb https://github.com/paulboone/ticgit
-$ git remote -v
-origin	https://github.com/schacon/ticgit (fetch)
-origin	https://github.com/schacon/ticgit (push)
-pb	https://github.com/paulboone/ticgit (fetch)
-pb	https://github.com/paulboone/ticgit (push)</pre>
+        <div class="code">
+          $ git remote add pb https://github.com/paulboone/ticgit<br>
+          $ git remote -v<br>
+          origin	https://github.com/schacon/ticgit (fetch)<br>
+          origin	https://github.com/schacon/ticgit (push)<br>
+          pb	https://github.com/paulboone/ticgit (fetch)<br>
+          pb	https://github.com/paulboone/ticgit (push)
+        </div>
         
         <h3>Получение изменений из удалённого репозитория</h3>
         <p class="text">Для получения данных из удалённых проектов:</p>
-        <pre class="code">$ git fetch [remote-name]</pre>
+        <div class="code">$ git fetch [remote-name]</div>
         <p class="text">Данная команда связывается с удалённым проектом и забирает все данные проекта, которых у вас ещё нет.</p>
         <p class="text">Команда <span class="intext">git fetch</span> забирает данные в локальный репозиторий,
         но не сливает их с какими-либо вашими наработками и не модифицирует то, над чем вы работаете в данный момент.</p>
@@ -201,16 +184,25 @@ pb	https://github.com/paulboone/ticgit (push)</pre>
         <h3>Отправка изменений в удаленный репозиторий</h3>
         <p class="text">Для отправки своих наработок в удалённый репозиторий: <span class="intext">git push [remote-name] [branch-name]</span></p>
         <p class="text">Для отправки ветки master на сервер origin:</p>
-        <pre class="code">$ git push origin master</pre>
-        <p class="text">Если вы и кто-то ещё одновременно клонируете, затем он выполняет команду push, а после него выполнить команду push попытаетесь вы,
-          то ваш push будет отклонён. Придётся сначала получить изменения и объединить их с вашими и только после этого вам будет позволено выполнить push.</p>
+        <div class="code">$ git push origin master</div>
+        
+        <p class="text">
+          Выполнив команду
+          <span class="intext">$ git push -u origin master</span>
+          вы устанавливаете связь между веткой, в которой вы находитесь
+          и веткой master на удалённом сервере.
+          Команду требуется выполнить единожды, чтобы потом можно было 
+          отправлять/принимать изменения лишь выполняя
+          <span class="intext">$ git push</span> из ветки без указания
+          алиасов для сервера и удалённых веток.
+        </p>
 
         <h2>Управление ветками</h2>
         <h3>Создание новой ветки</h3>
-        <pre class="code">$ git branch new-branch</pre>
+        <div class="code">$ git branch new-branch</div>
 
         <h3>Одновременное создание новой ветки и переключение на неё</h3>
-        <pre class="code">$ git checkout -b new-branch</pre>
+        <div class="code">$ git checkout -b new-branch</div>
         <div class="note">
           <p class="text">Начиная с Git версии 2.23, можно использовать <span class="intext">git switch</span> вместо <span class="intext">git checkout</span>:</p>
           <p class="text">Переключиться на существующую ветку: <span class="intext">git switch testing-branch</span>.</p>
@@ -219,17 +211,17 @@ pb	https://github.com/paulboone/ticgit (push)</pre>
 
         <h3>Переключение веток</h3>
         <p class="text">Для переключения на существующую ветку выполните команду:</p>
-        <pre class="code">$ git checkout otherbranch</pre>
+        <div class="code">$ git checkout otherbranch</div>
 
         <h2>Основы слияния</h2>
         <p class="text">Предположим, вы решили, что работа по проблеме #53 закончена и её можно влить в ветку master.
           Для этого нужно выполнить слияние ветки iss53 точно так же, как вы делали это с веткой hotfix ранее. 
           Все, что нужно сделать — переключиться на ветку, в которую вы хотите включить изменения, и выполнить команду git merge:</p>
-        <pre class="code">
-        $ git checkout master
-        Switched to branch 'master'
-        $ git merge iss53</pre>
-
+        <div class="code">
+          $ git checkout master<br>
+          Switched to branch 'master'<br>
+          $ git merge iss53
+        </div>
       </div>
     </div>
   </div>

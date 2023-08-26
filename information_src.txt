@@ -1,0 +1,109 @@
+<!-- 
+  Команды терминала
+
+ls 	-l (вывод списком. Каждый кат с овой строки)
+		-a (скрытые)
+ls -la
+		
+touch hello.ext (create new file)
+
+mkdir			(create dir)
+
+echo 'hello' > hello.txt (вывод/запись в файл)
+echo 'hello' >> hello.txt (дописать в файл)
+
+cat hello.txt 	(вывод содержимого файла)
+
+
+=GIT=======================================
+git config --list --show origin (список конфиг файлов Git)
+git config --global color.ui auto // ??
+
+
+git diff (вывод изменений индксированного, но уже измененного файла)
+git diff --cached (файлы в уже в индексе. И можно посмотреть что попадет в commit)
+
+git commit -am (тоже самое что: git add . + git commit -m "some text")
+
+git checkout -- [file] (отменить изменения в директории (например удалить изменения в [file]) т.е. откатить до предидущего состояния
+файл изменен, но новой команды git add еще не было)
+
+файл изменили и проиндексирровали, чтобы отменить индексирование:
+потом можно отменить изменение в самом файле с пом git -- checkout [file] (описано выше)
+git reset HEAD [file] ()
+
+git log // история коммитов. Пробел - листать дальше; q - выход
+
+//Ветки
+git branch -r // вывод веток в репозитории на сервере
+
+
+git branch // вывод существующих локальных
+	feature
+	master
+	test
+git branch -m feature to_delete // переименование
+git branch
+	master
+	test
+	to_delete
+git branch -D to_delete // удаление ветки
+git branch
+	master
+	test
+----слияние------
+git branch
+	master
+	*test
+git checkout master // переключ туда, куда будем сливать
+git branch
+	*master
+	test
+git merge test // слиние test в master
+
+//Удаленный репозирорий
+Два способа создания:
+1. Создать удаленный пустой репозиторий (на GitHub)
+2. Добавить ключ SSH
+	а. Создать новый локальный
+		git intit
+		git add .
+		git commit -m "first commit"
+		git remote add origin [url] // origin - дефолтное имя (можно изменять)
+		git push -u origin master
+		
+	b. Подключить существующий локальный
+		git remote add origin [url] // origin - дефолтное имя (можно изменять)
+		git push -u origin master
+------------------------------------------
+Команда git origin регистрирует удаленный сервер в файле git/config
+git remote // список удаленных репозиториев
+git remote -v // detailed
+------------------------------------
+git pull origin master // скачать изменения из конкретной ветки уд репо.
+// перед тем как делать push, что-бы избежать конфликтов.
+
+git pull // ?? скачать все изменения (в текущую ветку).
+
+git fetch  // подгрузить обновления из удал репозитория. (кто-то создал ветку, и у меня ее еще нет)
+
+git push origin master // закачать данные на сервер
+	если ветка и репозиторий единственные, можно push без параметров.
+
+git push -u origin dev // параметр -u (--set-upstream) используется,
+ если ветки dev еще нет в удаленном репозитории. Если указать -u,
+ то ветка будет создана автоматически. 
+
+====================================
+			
+			
+			
+----gui-----
+gitk (графич утилита для просмотра истории)
+git gui
+------------
+
+
+
+
+ -->
