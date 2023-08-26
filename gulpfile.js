@@ -17,7 +17,7 @@ function browser_sync() {
 function scripts() {
   return src([
     'node_modules/jquery/dist/jquery.min.js',
-    'app/js/app.js',
+    'scr/js/app.js',
   ])
   .pipe(concat('app.min.js'))   // gulp-concat (in package.json)
   .pipe(dest('dist/js/'))
@@ -26,8 +26,8 @@ function scripts() {
 
 function makecss() {
   return src([
-    'app/scss/style.scss',
-    'app/scss/media.scss',
+    'scr/scss/style.scss',
+    'scr/scss/media.scss',
   ])
   .pipe(concat('style.css'))
   .pipe(sass())
@@ -39,8 +39,8 @@ function makecss() {
 }
 
 function startwatch() {
-  watch('app/scss/*.scss', makecss);
-  watch('app/js/*.js', scripts);
+  watch('scr/scss/*.scss', makecss);
+  watch('scr/js/*.js', scripts);
   watch('dist/index.html').on('change', browserSync.reload);
 }
 
